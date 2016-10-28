@@ -1,6 +1,6 @@
 mysqlData/
 logs/
-Web/
+Web
 .idea/
 /vendor/
 app/

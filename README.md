@@ -2,16 +2,24 @@
 
 Use this setup as a basic setup for your development environment.
 
-## Dinghy
+### Menu:
+
+- [Dinghy](#dinghy)
+- [.env](#env)
+- [Start and stop](#startstop)
+- [Public web root](#webroot)
+- [Containers](#containers)
+
+## <a id="dinghy"></a>Dinghy
 This environment assumes dinghy http proxy is activated which catches all calls to *.docker.
 
 How to install and activate dinghy you read here: https://github.com/codekitchen/dinghy
 
-### .env
+### <a id="env"></a>.env
 
 Basic environment variables are set in the .env file.
 
-##### Currently:
+##### <a id="currently"></a>Currently:
 
 - HOSTNAME: the url by which you access your app. Has to end with .docker
 - PORTSUFFIX: Used to override some default ports for access
@@ -22,7 +30,7 @@ Basic environment variables are set in the .env file.
 - MYSQL_USER
 - MYSQL_PASSWORD
 
-### Start and stop
+### <a id="startstop"></a>Start and stop
 
 The environment can be controlled by:
 
@@ -30,6 +38,21 @@ The environment can be controlled by:
 - Stop: `$ bin/stop-environment.sh`
 - Restart: `$ bin/restart-environment.sh`
 - Composer: `$ bin/composer.sh`
+
+### <a id="startstop"></a>Public web root
+
+If you create your application in ./app you can use:
+
+`$ bin/generate-public-link.sh`
+
+To generate a symlink named Web to point to your app's public web root.
+THe supported frameworks currently are:
+
+- [Flow](http://flow.neos.io)
+- [Laravel](https://laravel.com/)
+- [Symfony](http://symfony.com/)
+
+This way the nginx configuration for the web root does not have to change.
 
 ### Containers
 
