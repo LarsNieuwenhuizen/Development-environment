@@ -38,13 +38,13 @@ services:
     env_file:
       - "./.env"
     volumes:
-      - "./mysqlData:/var/lib/mysql"
-      - "./logs/db/:/var/log/mysql/"
+      - "mysqlData:/var/lib/mysql"
+      - "./../logs/db/:/var/log/mysql/"
       - "./Build/docker/mariadb.cnf:/etc/mysql/conf.d/mariadb.cnf"
     ports:
       - "33${PORTSUFFIX}:3306"
   composer:
-    image: "composer/composer:latest"
+    image: "composer/composer:alpine"
     working_dir: "/app/"
     volumes:
       - "./:/app/"

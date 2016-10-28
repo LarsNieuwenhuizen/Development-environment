@@ -1,5 +1,5 @@
 mysqlData/
 logs/
 Web/
-Build/docker/mariadb/
 .idea/
+/vendor/
