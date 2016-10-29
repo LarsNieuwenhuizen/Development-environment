@@ -51,10 +51,17 @@ services:
       - "~/.composer/:/composer/"
     env_file:
       - "./.env"
+  symfony:
+    image: "larsnieuwenhuizen/symfony-installer"
+    working_dir: "/app/"
+    volumes:
+      - "./:/app/"
+    env_file:
+      - "./.env"
   mailcatcher:
     image: "schickling/mailcatcher"
     environment:
-      VIRTUAL_HOST: "mailcatcher.docker"
+      VIRTUAL_HOST: "${MAILCATCHER_HOSTNAME}"
       VIRTUAL_PORT: 1080
   elasticsearch:
     image: "elasticsearch:2.4"
@@ -64,5 +71,5 @@ services:
       - "92${PORTSUFFIX}:9200"
       - "93${PORTSUFFIX}:9300"
     environment:
-      VIRTUAL_HOST: "es.docker"
+      VIRTUAL_HOST: "${ELASTICSEARCH_HOSTNAME}"
       VIRTUAL_PORT: 9200

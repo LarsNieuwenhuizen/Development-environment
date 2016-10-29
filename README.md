@@ -9,6 +9,7 @@ Use this setup as a basic setup for your development environment.
 - [Start and stop](#startstop)
 - [Public web root](#webroot)
 - [Containers](#containers)
+- [Override](#override)
 
 ## <a id="dinghy"></a>Dinghy
 This environment assumes dinghy http proxy is activated which catches all calls to *.docker.
@@ -29,6 +30,8 @@ Basic environment variables are set in the .env file.
 - MYSQL_DATABASE
 - MYSQL_USER
 - MYSQL_PASSWORD
+- MAILCATCHER_HOSTNAME
+- ELASTICSEARCH_HOSTNAME
 
 ### <a id="startstop"></a>Start and stop
 
@@ -54,7 +57,7 @@ THe supported frameworks currently are:
 
 This way the nginx configuration for the web root does not have to change.
 
-### Containers
+### <a id="containers"></a>Containers
 
 The activated containers by default are:
 
@@ -63,11 +66,11 @@ The activated containers by default are:
 - php (7.0)
 - composer
 - mailcatcher
-    - mailcatcher.docker
+    - VHOST: mailcatcher.docker
 - elasticsearch
-     - es.docker
+    - VHOST: es.docker
      
-### Override
+### <a id="override"></a>Override
 
 To add or override your own containers you can edit the docker-compose.yml file.
 Or use the docker-compose.override.yml
