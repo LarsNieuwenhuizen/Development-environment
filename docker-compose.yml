@@ -58,6 +58,13 @@ services:
       - "./:/app/"
     env_file:
       - "./.env"
+  laravel:
+    image: "larsnieuwenhuizen/laravel-installer"
+    working_dir: "/app/"
+    volumes:
+      - "./:/app/"
+    env_file:
+      - "./.env"
   mailcatcher:
     image: "schickling/mailcatcher"
     environment:
