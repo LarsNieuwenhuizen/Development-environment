@@ -45,7 +45,7 @@ do
             generateForLaravel
             exit
             ;;
-        "Option 3")
+        "Symfony")
             generateForSymfony
             exit
             ;;
