@@ -2,6 +2,8 @@
 
 Use this setup as a basic setup for your development environment.
 
+Credits for the initial setup of this environment go to [@radmiraal](https://github.com/radmiraal)
+
 ### Menu:
 
 - [Dinghy](#dinghy)
