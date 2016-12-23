@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "./.env"
+source './.env'
 
 echo 'This installs your framework in the default app directory set in the .env file'
 
@@ -22,9 +22,13 @@ do
         exit
         ;;
         "Symfony")
-            echo "Symfony is being installed"
-            ./bin/symfony.sh new ${APPLICATION_DIRECTORY}
-            ./bin/generate-public-link.sh symfony
+        echo "Symfony is being installed"
+        ./bin/symfony.sh new ${APPLICATION_DIRECTORY}
+        ./bin/generate-public-link.sh Symfony
+        exit
+        ;;
+        "None of the above")
+        echo "Then stop bugging me and deal with it yourself..."
         exit
         ;;
     esac
