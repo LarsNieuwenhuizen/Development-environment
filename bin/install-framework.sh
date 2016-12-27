@@ -17,7 +17,7 @@ do
         ;;
         "Laravel")
         echo "Laravel is being installed"
-        ./bin/composer.sh create-project --prefer-dist laravel/laravel ${APPLICATION_DIRECTORY}
+        ./bin/laravel.sh new ${APPLICATION_DIRECTORY}
         ./bin/generate-public-link.sh Laravel
         exit
         ;;
